@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/blackjack/blackjack.css">
+    <link rel="stylesheet" type="text/css" href="css/msdropdown/dd.css" />
+</head>
+<body>
+
+</body>
+    <label>User Cards</label>
+    <br/>
+    <select id="userCard1" name="userCard1" style="width:150px">
+        <option value = "A" data-image="images/blackjack/icons/A.png"></option>
+        <option value = "2" data-image="images/blackjack/icons/2.png"></option>
+        <option value = "3" data-image="images/blackjack/icons/3.png"></option>
+        <option value = "4" data-image="images/blackjack/icons/4.png"></option>
+        <option value = "5" data-image="images/blackjack/icons/5.png"></option>
+        <option value = "6" data-image="images/blackjack/icons/6.png"></option>
+        <option value = "7" data-image="images/blackjack/icons/7.png"></option>
+        <option value = "8" data-image="images/blackjack/icons/8.png"></option>
+        <option value = "9" data-image="images/blackjack/icons/9.png"></option>
+        <option value = "10" data-image="images/blackjack/icons/10.png"></option>
+        <option value = "10" data-image="images/blackjack/icons/J.png"></option>
+        <option value = "10" data-image="images/blackjack/icons/Q.png"></option>
+        <option value = "10" data-image="images/blackjack/icons/K.png"></option>
+    </select>
+
+    <select id="userCard2" name="userCard2" style="width:150px">
+        <option value = "A" data-image="images/blackjack/icons/A.png"></option>
+        <option value = "2" data-image="images/blackjack/icons/2.png"></option>
+        <option value = "3" data-image="images/blackjack/icons/3.png"></option>
+        <option value = "4" data-image="images/blackjack/icons/4.png"></option>
+        <option value = "5" data-image="images/blackjack/icons/5.png"></option>
+        <option value = "6" data-image="images/blackjack/icons/6.png"></option>
+        <option value = "7" data-image="images/blackjack/icons/7.png"></option>
+        <option value = "8" data-image="images/blackjack/icons/8.png"></option>
+        <option value = "9" data-image="images/blackjack/icons/9.png"></option>
+        <option value = "10" data-image="images/blackjack/icons/10.png"></option>
+        <option value = "10" data-image="images/blackjack/icons/J.png"></option>
+        <option value = "10" data-image="images/blackjack/icons/Q.png"></option>
+        <option value = "10" data-image="images/blackjack/icons/K.png"></option>
+    </select>
+
+    <br/><br/><br/>
+
+    <label>Dealer Card</label>
+    <br/>
+    <select id="dealerCard1" name="dealerCard1" style="width:150px">
+        <option value = "A" data-image="images/blackjack/icons/A.png"></option>
+        <option value = "2" data-image="images/blackjack/icons/2.png"></option>
+        <option value = "3" data-image="images/blackjack/icons/3.png"></option>
+        <option value = "4" data-image="images/blackjack/icons/4.png"></option>
+        <option value = "5" data-image="images/blackjack/icons/5.png"></option>
+        <option value = "6" data-image="images/blackjack/icons/6.png"></option>
+        <option value = "7" data-image="images/blackjack/icons/7.png"></option>
+        <option value = "8" data-image="images/blackjack/icons/8.png"></option>
+        <option value = "9" data-image="images/blackjack/icons/9.png"></option>
+        <option value = "10" data-image="images/blackjack/icons/10.png"></option>
+        <option value = "10" data-image="images/blackjack/icons/J.png"></option>
+        <option value = "10" data-image="images/blackjack/icons/Q.png"></option>
+        <option value = "10" data-image="images/blackjack/icons/K.png"></option>
+    </select>
+    <br/><br/><br/>
+    <button  id="submit" >Submit</button>
+    <br/><br/><br/>
+    <p id="result"></p>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+<script src="js/blackjack/blackjack.js"></script>
+<script src="js/msdropdown/jquery.dd.min.js" type="text/javascript"></script>
+<script language="javascript">
+    $(document).ready(function(e) {
+        try {
+            $("#userCard1").msDropDown({visibleRows:13});
+            $("#userCard2").msDropDown({visibleRows:13});
+            $("#dealerCard1").msDropDown({visibleRows:13});
+        } catch(e) {
+            alert(e.message);
+        }
+    });
+</script>
+</html>
