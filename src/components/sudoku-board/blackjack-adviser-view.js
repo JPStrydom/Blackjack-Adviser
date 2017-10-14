@@ -46,7 +46,6 @@ export default class BlackjackAdviserView extends Component {
                         ))}
                     </DropdownContent>
                 </Dropdown>
-
                 <Dropdown>
                     <DropdownTrigger>
                         <img className="image" src={userCard2} />
@@ -73,7 +72,7 @@ export default class BlackjackAdviserView extends Component {
                 <h3 className="heading">Dealer Card</h3>
                 <Dropdown>
                     <DropdownTrigger>
-                        <img className="image" src={this.props.cards.dealerCard} />
+                        <img className="image" src={dealerCard} />
                     </DropdownTrigger>
                     <DropdownContent>
                         {image.hearts.map(card => (
@@ -91,9 +90,10 @@ export default class BlackjackAdviserView extends Component {
     }
 
     renderAnalyzeButton() {
+        const { advice } = this.props.cards;
         return (
             <div className="button-container">
-                <button className="button" onClick={this.props.analyse}>
+                <button className="button" onClick={this.props.analyse} disabled={!advice}>
                     <span>Analyze</span>
                 </button>
             </div>
