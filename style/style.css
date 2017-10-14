@@ -6,10 +6,21 @@ span {
     font-size: 28px;
 }
 
-.sudoku-board {
-    width: 462px;
+.cards-container {
+    width: 350px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.user-cards-container {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.dealer-card-container {
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 25px;
 }
 
 .heading {
@@ -20,12 +31,38 @@ span {
     font-family: Optima, Segoe, 'Segoe UI', Candara, Calibri, Arial, sans-serif;
 }
 
-.buttons-container {
-    padding: 20px 2px;
+.image {
+    width: 150px;
+    transition-duration: 0.25s;
+}
+
+.image:hover {
+    transform: scale(1.05);
+    transition-duration: 0.25s;
+}
+
+.image-secondary {
+    position:relative;
+    z-index: 1;
+    width: 150px;
+    transition-duration: 0.25s;
+    margin-top: -175px;
+}
+
+.image-secondary:hover {
+    position:relative;
+    transform: translateY(-10px);
+    transition-duration: 0.25s;
+}
+
+.button-container {
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 25px;
 }
 
 .button {
-    min-width: 154px;
+    min-width: 150px;
     background-color: #4CACAF;
     border: none;
     border-radius: 4px;
@@ -34,7 +71,6 @@ span {
     text-align: center;
     text-decoration: none;
     font-family: Optima, Segoe, 'Segoe UI', Candara, Calibri, Arial, sans-serif;
-    margin-left: 50px;
     cursor: pointer;
     transition-duration: 0.25s;
     outline: none !important;
@@ -75,4 +111,17 @@ span {
 .github-link:visited {
     text-decoration: none;
     color: #0275d8;
+}
+
+.dropdown {
+    display: inline-block;
+}
+
+.dropdown__content {
+    display: none;
+    position: absolute;
+}
+
+.dropdown--active .dropdown__content {
+    display: block;
 }
