@@ -27,35 +27,43 @@ export default class BlackjackAdviserView extends Component {
     }
 
     renderUserCards() {
-        const { type, userCard1, userCard2 } = this.props.cards;
+        const { type, userCard1, userCard2, showUserCards1, showUserCards2 } = this.props.cards;
         return (
             <div className="user-cards-container">
                 <h3 className="heading">User Cards</h3>
-                <Dropdown>
+                <Dropdown active={showUserCards1}>
                     <DropdownTrigger>
-                        <img className="image" src={userCard1} />
+                        <img
+                            className="image"
+                            src={userCard1}
+                            onClick={this.handleCardChange(type.user1, image.background.blue)}
+                        />
                     </DropdownTrigger>
                     <DropdownContent>
                         {image.clubs.map(card => (
                             <img
                                 key={`${type.user1}${card}`}
                                 className="image-secondary"
-                                onClick={() => this.handleCardChange(type.user1, card)}
+                                onClick={this.handleCardChange(type.user1, card)}
                                 src={card}
                             />
                         ))}
                     </DropdownContent>
                 </Dropdown>
-                <Dropdown>
+                <Dropdown active={showUserCards2}>
                     <DropdownTrigger>
-                        <img className="image" src={userCard2} />
+                        <img
+                            className="image"
+                            src={userCard2}
+                            onClick={this.handleCardChange(type.user2, image.background.blue)}
+                        />
                     </DropdownTrigger>
                     <DropdownContent>
                         {image.clubs.map(card => (
                             <img
                                 key={`${type.user2}${card}`}
                                 className="image-secondary"
-                                onClick={() => this.handleCardChange(type.user2, card)}
+                                onClick={this.handleCardChange(type.user2, card)}
                                 src={card}
                             />
                         ))}
@@ -66,20 +74,24 @@ export default class BlackjackAdviserView extends Component {
     }
 
     renderDealerCard() {
-        const { type, dealerCard } = this.props.cards;
+        const { type, dealerCard, showDealerCards } = this.props.cards;
         return (
             <div className="dealer-card-container">
                 <h3 className="heading">Dealer Card</h3>
-                <Dropdown>
+                <Dropdown active={showDealerCards}>
                     <DropdownTrigger>
-                        <img className="image" src={dealerCard} />
+                        <img
+                            className="image"
+                            src={dealerCard}
+                            onClick={this.handleCardChange(type.dealer, image.background.red)}
+                        />
                     </DropdownTrigger>
                     <DropdownContent>
                         {image.hearts.map(card => (
                             <img
                                 key={`${type.dealer}${card}`}
                                 className="image-secondary"
-                                onClick={() => this.handleCardChange(type.dealer, card)}
+                                onClick={this.handleCardChange(type.dealer, card)}
                                 src={card}
                             />
                         ))}
@@ -111,6 +123,9 @@ export default class BlackjackAdviserView extends Component {
     }
 
     handleCardChange(type, card) {
-        this.props.updateCard(type, card);
+        const updateCard = this.props.updateCard;
+        return function() {
+            updateCard(type, card);
+        }
     }
 }
