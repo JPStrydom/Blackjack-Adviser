@@ -1,0 +1,3 @@
+function calculateCardValue(card) {
+
+}
