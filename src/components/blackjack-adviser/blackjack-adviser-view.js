@@ -126,6 +126,6 @@ export default class BlackjackAdviserView extends Component {
         const updateCard = this.props.updateCard;
         return function() {
             updateCard(type, card);
-        }
+        };
     }
 }
