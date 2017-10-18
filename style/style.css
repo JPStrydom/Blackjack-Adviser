@@ -2,6 +2,10 @@ html, body {
     background-color: #D3D3D3 !important;
 }
 
+html {
+    margin-left: calc(100vw - 100%);
+}
+
 span {
     font-size: 28px;
 }
