@@ -1,7 +1,7 @@
 import React from 'react';
 import { Component } from 'react';
 
-import BlackjackAdviser from './sudoku-board/blackjack-adviser-container';
+import BlackjackAdviser from './blackjack-adviser/blackjack-adviser-container';
 
 const consoleWelcomeMessage =
     '\n\n _    _      _                            _____      ______ _            _    _            _       ___      _       _               \n' +

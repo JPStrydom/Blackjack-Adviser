@@ -1,9 +1,9 @@
 {
-  "name": "Sudoku-AI",
+  "name": "Blackjack-Adviser",
   "version": "1.0.0",
-  "description": "A simple web application that can solve custom sudoku puzzle",
+  "description": "A simple web application that suggests the best statistical blackjack betting stratagy",
   "main": "index.js",
-  "repository": "git@github.com:JPStrydom/Sudoku-AI.git",
+  "repository": "git@github.com:JPStrydom/Blackjack-Adviser.git",
   "scripts": {
     "dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "postinstall": "webpack -p",

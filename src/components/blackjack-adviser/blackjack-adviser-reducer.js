@@ -123,7 +123,7 @@ function updateAdviceAction(payload) {
     };
 }
 
-export default function SudokuBoardReducer(state = getInitialState(), action) {
+export default function BlackjackAdviserReducer(state = getInitialState(), action) {
     switch (action.type) {
         case UPDATE_USER_CARD_1:
             return {
