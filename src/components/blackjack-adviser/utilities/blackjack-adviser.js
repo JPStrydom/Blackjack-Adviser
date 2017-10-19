@@ -71,7 +71,7 @@ export function calculateSoftAdvice(userCard1, userCard2, dealerCard) {
             if (dealerCard <= 6) {
                 return advice.double;
             } else if (dealerCard <= 8) {
-                return advice.stay
+                return advice.stay;
             }
             return advice.hit;
         case 8 || 9:
