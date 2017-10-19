@@ -102,10 +102,10 @@ export default class BlackjackAdviserView extends Component {
     }
 
     renderAnalyzeButton() {
-        const { advice } = this.props.cards;
+        const { adviceActive } = this.props.cards;
         return (
             <div className="button-container">
-                <button className="button" onClick={this.props.analyse} disabled={!advice}>
+                <button className="button" onClick={this.props.analyse} disabled={!adviceActive}>
                     <span>Analyze</span>
                 </button>
             </div>

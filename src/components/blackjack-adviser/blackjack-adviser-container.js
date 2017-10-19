@@ -12,7 +12,6 @@ function mapDispatchToProps(dispatch) {
     return bindActionCreators(
         {
             updateCard,
-            toggleShowCards,
             analyse
         },
         dispatch

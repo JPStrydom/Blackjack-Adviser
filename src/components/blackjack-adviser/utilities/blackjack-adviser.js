@@ -5,7 +5,8 @@ export const advice = {
     stay: 'Stay',
     double: 'Double',
     hit: 'Hit',
-    blackjack: 'Blackjack'
+    blackjack: 'Blackjack',
+    invalid: 'Invalid'
 };
 
 export function calculateCardValue(card) {
@@ -137,4 +138,20 @@ export function calculateHardAdvice(userCard1, userCard2, dealerCard) {
         default:
             return;
     }
+}
+
+export default function getAdvice(userCard1, userCard2, dealerCard) {
+    let advice = calculateSplitAdvice(userCard1, userCard2, dealerCard);
+    if (advice) {
+        return advice;
+    }
+    advice = calculateSoftAdvice(userCard1, userCard2, dealerCard);
+    if (advice) {
+        return advice;
+    }
+    advice = calculateHardAdvice(userCard1, userCard2, dealerCard);
+    if (advice) {
+        return advice;
+    }
+    return advice.invalid;
 }
