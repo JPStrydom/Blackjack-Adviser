@@ -1,0 +1,130 @@
+html, body {
+    background-color: #D3D3D3 !important;
+}
+
+html {
+    margin-left: calc(100vw - 100%);
+}
+
+span {
+    font-size: 28px;
+}
+
+.cards-container {
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.user-cards-container {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.dealer-card-container {
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 25px;
+}
+
+.heading {
+    color: black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: Optima, Segoe, 'Segoe UI', Candara, Calibri, Arial, sans-serif;
+}
+
+.image {
+    width: 150px;
+    transition-duration: 0.25s;
+}
+
+.image:hover {
+    transform: translateY(-10px);
+}
+
+.image-secondary {
+    position: relative;
+    z-index: 1;
+    width: 150px;
+    transition-duration: 0.25s;
+    margin-top: -175px;
+}
+
+.image-secondary:hover {
+    position:relative;
+    transform: translateY(-10px);
+    transition-duration: 0.25s;
+}
+
+.button-container {
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 25px;
+}
+
+.button {
+    min-width: 150px;
+    background-color: #4CACAF;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-family: Optima, Segoe, 'Segoe UI', Candara, Calibri, Arial, sans-serif;
+    cursor: pointer;
+    transition-duration: 0.25s;
+    outline: none !important;
+}
+
+.button:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+.button:disabled {
+    transition-delay: 0.25s;
+    opacity: 0.6;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: scale(1);
+}
+
+.github-link-container {
+    text-align: center;
+}
+
+.github-link {
+    display: inline-block;
+    font-size: 18px;
+    font-family: Optima, Segoe, 'Segoe UI', Candara, Calibri, Arial, sans-serif;
+    transition-duration: 0.25s;
+}
+
+.github-link:hover {
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    transition-duration: 0.25s;
+    text-decoration: none;
+    color: #0275d8;
+}
+
+.github-link:visited {
+    text-decoration: none;
+    color: #0275d8;
+}
+
+.dropdown {
+    display: inline-block;
+}
+
+.dropdown__content {
+    display: none;
+    position: absolute;
+}
+
+.dropdown--active .dropdown__content {
+    display: block;
+}
