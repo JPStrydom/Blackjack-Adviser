@@ -28,19 +28,19 @@ export function calculateSplitAdvice(userCard1, userCard2, dealerCard) {
 
     switch (userCard1) {
         case 2 || 3 || 7:
-            if ( dealerCard <= 7) {
+            if (dealerCard <= 7) {
                 return advice.split;
             }
             return;
         case 6:
-            if( dealerCard <= 6) {
+            if (dealerCard <= 6) {
                 return advice.split;
             }
             return;
         case 8 || 11:
             return advice.split;
         case 9:
-            if ( dealerCard <= 9 && dealerCard !== 7) {
+            if (dealerCard <= 9 && dealerCard !== 7) {
                 return advice.split;
             }
             return;
