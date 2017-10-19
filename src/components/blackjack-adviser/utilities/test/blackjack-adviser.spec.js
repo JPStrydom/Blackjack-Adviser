@@ -43,5 +43,7 @@ describe('Blackjack Adviser', () => {
         //TODO: Add more split tests
     });
 
-    //TODO: Add soft pair tests
+    //TODO: Add soft total tests
+
+    //TODO: Add hard total tests
 });
