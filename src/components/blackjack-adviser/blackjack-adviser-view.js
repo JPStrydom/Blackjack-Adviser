@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Dropdown, { DropdownTrigger, DropdownContent } from 'react-simple-dropdown';
+import Modal from 'react-modal';
 import image from './utilities/image-link';
 
 export default class BlackjackAdviserView extends Component {
@@ -10,6 +11,7 @@ export default class BlackjackAdviserView extends Component {
         this.renderDealerCard = this.renderDealerCard.bind(this);
         this.renderAnalyzeButton = this.renderAnalyzeButton.bind(this);
         this.renderGitHubLink = this.renderGitHubLink.bind(this);
+        this.renderModal = this.renderModal.bind(this);
         this.handleCardChange = this.handleCardChange.bind(this);
     }
 
@@ -22,6 +24,7 @@ export default class BlackjackAdviserView extends Component {
                 {this.renderDealerCard()}
                 {this.renderAnalyzeButton()}
                 {this.renderGitHubLink()}
+                {this.renderModal()}
             </div>
         );
     }
@@ -109,6 +112,29 @@ export default class BlackjackAdviserView extends Component {
                     <span>Analyze</span>
                 </button>
             </div>
+        );
+    }
+
+    renderModal() {
+        const { advice } = this.props.cards;
+        const customStyles = {
+            content: {
+                top: '50%',
+                left: '50%',
+                right: 'auto',
+                bottom: 'auto',
+                marginRight: '-50%',
+                transform: 'translate(-50%, -50%)',
+                background: '#555'
+            }
+        };
+        return (
+            <Modal isOpen={!!advice} style={customStyles}>
+                <h1 className={`modal-text ${advice ? advice.toLowerCase() : ''}`}>{advice}</h1>
+                <button className="button" onClick={this.props.clearAdvice}>
+                    <span>Back</span>
+                </button>
+            </Modal>
         );
     }
 

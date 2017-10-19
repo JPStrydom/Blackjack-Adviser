@@ -9,7 +9,7 @@
     "postinstall": "webpack -p",
     "start": "node server.js",
     "test": "jest",
-    "prettier": "node_modules/.bin/prettier --write --tab-width=4 --single-quote=true --print-width=120 \"src/**/*.js\""
+    "prettier": "node_modules/.bin/prettier --write --tab-width=4 --single-quote=true --print-width=120 \"src/**/*.js\" \"style/**/*.css\""
   },
   "pre-commit": [
     "prettier"
@@ -37,6 +37,7 @@
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-items-carousel": "^2.2.1",
+    "react-modal": "^3.0.4",
     "react-redux": "^4.0.0",
     "react-simple-dropdown": "^3.2.0",
     "redux": "^3.0.4",

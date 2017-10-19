@@ -94,6 +94,12 @@ export function analyse() {
     };
 }
 
+export function clearAdvice() {
+    return dispatch => {
+        dispatch(updateAdviceAction(null));
+    };
+}
+
 function updateUserCard1Action(payload) {
     return {
         type: UPDATE_USER_CARD_1,

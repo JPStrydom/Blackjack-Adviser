@@ -28,7 +28,9 @@ export function calculateSplitAdvice(userCard1, userCard2, dealerCard) {
     }
 
     switch (userCard1) {
-        case 2 || 3 || 7:
+        case 2:
+        case 3:
+        case 7:
             if (dealerCard <= 7) {
                 return advice.split;
             }
@@ -38,7 +40,8 @@ export function calculateSplitAdvice(userCard1, userCard2, dealerCard) {
                 return advice.split;
             }
             return;
-        case 8 || 11:
+        case 8:
+        case 11:
             return advice.split;
         case 9:
             if (dealerCard <= 9 && dealerCard !== 7) {
@@ -63,15 +66,17 @@ export function calculateSoftAdvice(userCard1, userCard2, dealerCard) {
         return;
     }
 
-    const card = userCard1 === 11 ? userCard1 : userCard2;
+    const card = userCard1 === 11 ? userCard2 : userCard1;
 
     switch (card) {
-        case 2 || 3:
+        case 2:
+        case 3:
             if (dealerCard === 5 || dealerCard === 6) {
                 return advice.double;
             }
             return advice.hit;
-        case 4 || 5:
+        case 4:
+        case 5:
             if (dealerCard >= 4 && dealerCard <= 6) {
                 return advice.double;
             }
@@ -88,7 +93,8 @@ export function calculateSoftAdvice(userCard1, userCard2, dealerCard) {
                 return advice.stay;
             }
             return advice.hit;
-        case 8 || 9:
+        case 8:
+        case 9:
             return advice.stay;
         case 10:
             return advice.blackjack;
@@ -109,7 +115,10 @@ export function calculateHardAdvice(userCard1, userCard2, dealerCard) {
     const cardTotal = userCard1 + userCard2;
 
     switch (cardTotal) {
-        case 5 || 6 || 7 || 8:
+        case 5:
+        case 6:
+        case 7:
+        case 8:
             return advice.hit;
         case 9:
             if (dealerCard >= 3 && dealerCard <= 6) {
@@ -128,12 +137,17 @@ export function calculateHardAdvice(userCard1, userCard2, dealerCard) {
                 return advice.stay;
             }
             return advice.hit;
-        case 13 || 14 || 15 || 16:
+        case 13:
+        case 14:
+        case 15:
+        case 16:
             if (dealerCard <= 6) {
                 return advice.stay;
             }
             return advice.hit;
-        case 17 || 18 || 19:
+        case 17:
+        case 18:
+        case 19:
             return advice.stay;
         default:
             return;
@@ -141,17 +155,17 @@ export function calculateHardAdvice(userCard1, userCard2, dealerCard) {
 }
 
 export default function getAdvice(userCard1, userCard2, dealerCard) {
-    let advice = calculateSplitAdvice(userCard1, userCard2, dealerCard);
-    if (advice) {
-        return advice;
+    let adviceString = calculateSplitAdvice(userCard1, userCard2, dealerCard);
+    if (adviceString) {
+        return adviceString;
     }
-    advice = calculateSoftAdvice(userCard1, userCard2, dealerCard);
-    if (advice) {
-        return advice;
+    adviceString = calculateSoftAdvice(userCard1, userCard2, dealerCard);
+    if (adviceString) {
+        return adviceString;
     }
-    advice = calculateHardAdvice(userCard1, userCard2, dealerCard);
-    if (advice) {
-        return advice;
+    adviceString = calculateHardAdvice(userCard1, userCard2, dealerCard);
+    if (adviceString) {
+        return adviceString;
     }
     return advice.invalid;
 }

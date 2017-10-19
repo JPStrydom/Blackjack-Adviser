@@ -1,5 +1,6 @@
-html, body {
-    background-color: #D3D3D3 !important;
+html,
+body {
+    background-color: #d3d3d3 !important;
 }
 
 html {
@@ -53,7 +54,7 @@ span {
 }
 
 .image-secondary:hover {
-    position:relative;
+    position: relative;
     transform: translateY(-10px);
     transition-duration: 0.25s;
 }
@@ -66,7 +67,7 @@ span {
 
 .button {
     min-width: 150px;
-    background-color: #4CACAF;
+    background-color: #4cacaf;
     border: none;
     border-radius: 4px;
     color: white;
@@ -127,4 +128,31 @@ span {
 
 .dropdown--active .dropdown__content {
     display: block;
+}
+
+.modal-text {
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 12px;
+    font-family: Optima, Segoe, 'Segoe UI', Candara, Calibri, Arial, sans-serif;
+}
+
+.hit {
+    color: red;
+}
+
+.stay {
+    color: yellow;
+}
+
+.double {
+    color: green;
+}
+
+.split {
+    color: blue;
+}
+
+.blackjack {
+    color: black;
 }

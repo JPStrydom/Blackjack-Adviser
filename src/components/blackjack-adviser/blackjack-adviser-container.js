@@ -1,7 +1,7 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { updateCard, toggleShowCards, analyse } from './blackjack-adviser-reducer';
+import { updateCard, analyse, clearAdvice } from './blackjack-adviser-reducer';
 import BlackjackAdviserView from './blackjack-adviser-view';
 
 function mapStateToProps({ cards }) {
@@ -12,7 +12,8 @@ function mapDispatchToProps(dispatch) {
     return bindActionCreators(
         {
             updateCard,
-            analyse
+            analyse,
+            clearAdvice
         },
         dispatch
     );
