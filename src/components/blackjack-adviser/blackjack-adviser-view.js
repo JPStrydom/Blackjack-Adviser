@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import Dropdown, {DropdownTrigger, DropdownContent} from 'react-simple-dropdown';
+import React, { Component } from 'react';
+import Dropdown, { DropdownTrigger, DropdownContent } from 'react-simple-dropdown';
 import Modal from 'react-modal';
 import image from './utilities/image-link';
 
@@ -32,12 +32,12 @@ export default class BlackjackAdviserView extends Component {
             <div className="cards-container">
                 {this.renderUserCards()}
                 {this.renderDealerCard()}
-            </div>);
-
+            </div>
+        );
     }
 
     renderUserCards() {
-        const {type, userCard1, userCard2, showUserCards1, showUserCards2} = this.props.cards;
+        const { type, userCard1, userCard2, showUserCards1, showUserCards2 } = this.props.cards;
         return (
             <div>
                 <h3 className="heading">User Cards</h3>
@@ -84,7 +84,7 @@ export default class BlackjackAdviserView extends Component {
     }
 
     renderDealerCard() {
-        const {type, dealerCard, showDealerCards} = this.props.cards;
+        const { type, dealerCard, showDealerCards } = this.props.cards;
         return (
             <div>
                 <h3 className="heading">Dealer Card</h3>
@@ -112,9 +112,9 @@ export default class BlackjackAdviserView extends Component {
     }
 
     renderAdvice() {
-        const {advice} = this.props.cards;
+        const { advice } = this.props.cards;
         if (!advice) {
-            return <br/>;
+            return <br />;
         }
         return (
             <div className="advice-card-container">
@@ -137,7 +137,7 @@ export default class BlackjackAdviserView extends Component {
 
     handleCardChange(type, card) {
         const updateCard = this.props.updateCard;
-        return function () {
+        return function() {
             updateCard(type, card);
         };
     }
