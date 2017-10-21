@@ -9,12 +9,12 @@ module.exports = {
         loaders: [
             {
                 exclude: /node_modules/,
-                loader: 'babel'
+                loader: 'babel-loader'
             }
         ]
     },
     resolve: {
-        extensions: ['', '.js', '.jsx']
+        extensions: ['*', '.css', '.js', '.json', '.jsx']
     },
     devServer: {
         contentBase: './'
