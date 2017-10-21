@@ -143,6 +143,9 @@ export function calculateHardAdvice(userCard1, userCard2, dealerCard) {
             }
             return advice.hit;
         case 11:
+            if (dealerCard === 11) {
+                return advice.hit;
+            }
             return advice.double;
         case 12:
             if (dealerCard >= 4 && dealerCard <= 6) {
