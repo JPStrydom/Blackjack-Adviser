@@ -115,17 +115,15 @@ export default class BlackjackAdviserView extends Component {
         const { advice } = this.props.cards;
         let component;
         if (advice) {
-            component = <div className="advice-card-container">
-                <div className="advice-card">
-                    <h4 className={`advice-text ${advice ? advice.toLowerCase() : ''}`}>{advice}</h4>
+            component = (
+                <div className="advice-card-container">
+                    <div className="advice-card">
+                        <h4 className={`advice-text ${advice ? advice.toLowerCase() : ''}`}>{advice}</h4>
+                    </div>
                 </div>
-            </div>
+            );
         }
-        return (
-            <ReactCSSTransitionGroup transitionName="advice">
-                {component}
-            </ReactCSSTransitionGroup>
-        );
+        return <ReactCSSTransitionGroup transitionName="advice">{component}</ReactCSSTransitionGroup>;
     }
 
     renderGitHubLink() {
