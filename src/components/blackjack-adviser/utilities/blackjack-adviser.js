@@ -35,16 +35,16 @@ export function calculateSplitAdvice(userCard1, userCard2, dealerCard) {
                 return advice.split;
             }
             return advice.hit;
-		case 4:
-			if (dealerCard === 5 || dealerCard === 6) {
-				return advice.split;
-			}
-			return advice.hit;
-		case 5:
-			if (dealerCard <= 9) {
-				return advice.double;
-			}
-			return advice.hit;
+        case 4:
+            if (dealerCard === 5 || dealerCard === 6) {
+                return advice.split;
+            }
+            return advice.hit;
+        case 5:
+            if (dealerCard <= 9) {
+                return advice.double;
+            }
+            return advice.hit;
         case 6:
             if (dealerCard <= 6) {
                 return advice.split;
@@ -58,8 +58,8 @@ export function calculateSplitAdvice(userCard1, userCard2, dealerCard) {
                 return advice.split;
             }
             return advice.stay;
-		case 10:
-			return advice.stay;
+        case 10:
+            return advice.stay;
         default:
             return;
     }
