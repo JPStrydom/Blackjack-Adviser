@@ -6,7 +6,7 @@ export const advice = {
     double: 'Double',
     hit: 'Hit',
     blackjack: 'Blackjack',
-    invalid: 'Invalid'
+    invalid: null
 };
 
 export function calculateCardValue(card) {

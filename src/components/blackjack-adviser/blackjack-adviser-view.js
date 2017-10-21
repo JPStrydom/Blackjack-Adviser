@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import Dropdown, { DropdownTrigger, DropdownContent } from 'react-simple-dropdown';
+import React, {Component} from 'react';
+import Dropdown, {DropdownTrigger, DropdownContent} from 'react-simple-dropdown';
 import Modal from 'react-modal';
 import image from './utilities/image-link';
 
@@ -7,32 +7,39 @@ export default class BlackjackAdviserView extends Component {
     constructor(props) {
         super(props);
 
+        this.renderCards = this.renderCards.bind(this);
         this.renderUserCards = this.renderUserCards.bind(this);
         this.renderDealerCard = this.renderDealerCard.bind(this);
-        this.renderAnalyzeButton = this.renderAnalyzeButton.bind(this);
+        this.renderAdvice = this.renderAdvice.bind(this);
         this.renderGitHubLink = this.renderGitHubLink.bind(this);
-        this.renderModal = this.renderModal.bind(this);
         this.handleCardChange = this.handleCardChange.bind(this);
     }
 
     render() {
         document.title = 'Blackjack Adviser';
         return (
-            <div className="cards-container">
+            <div className="page-container">
                 <h1 className="heading">{document.title}</h1>
-                {this.renderUserCards()}
-                {this.renderDealerCard()}
-                {this.renderAnalyzeButton()}
+                {this.renderCards()}
+                {this.renderAdvice()}
                 {this.renderGitHubLink()}
-                {this.renderModal()}
             </div>
         );
     }
 
-    renderUserCards() {
-        const { type, userCard1, userCard2, showUserCards1, showUserCards2 } = this.props.cards;
+    renderCards() {
         return (
-            <div className="user-cards-container">
+            <div className="cards-container">
+                {this.renderUserCards()}
+                {this.renderDealerCard()}
+            </div>);
+
+    }
+
+    renderUserCards() {
+        const {type, userCard1, userCard2, showUserCards1, showUserCards2} = this.props.cards;
+        return (
+            <div>
                 <h3 className="heading">User Cards</h3>
                 <Dropdown active={showUserCards1}>
                     <DropdownTrigger>
@@ -77,9 +84,9 @@ export default class BlackjackAdviserView extends Component {
     }
 
     renderDealerCard() {
-        const { type, dealerCard, showDealerCards } = this.props.cards;
+        const {type, dealerCard, showDealerCards} = this.props.cards;
         return (
-            <div className="dealer-card-container">
+            <div>
                 <h3 className="heading">Dealer Card</h3>
                 <Dropdown active={showDealerCards}>
                     <DropdownTrigger>
@@ -104,37 +111,17 @@ export default class BlackjackAdviserView extends Component {
         );
     }
 
-    renderAnalyzeButton() {
-        const { adviceActive } = this.props.cards;
+    renderAdvice() {
+        const {advice} = this.props.cards;
+        if (!advice) {
+            return <br/>;
+        }
         return (
-            <div className="button-container">
-                <button className="button" onClick={this.props.analyse} disabled={!adviceActive}>
-                    <span>Analyze</span>
-                </button>
+            <div className="advice-card-container">
+                <div className="advice-card">
+                    <h4 className={`advice-text ${advice ? advice.toLowerCase() : ''}`}>{advice}</h4>
+                </div>
             </div>
-        );
-    }
-
-    renderModal() {
-        const { advice } = this.props.cards;
-        const customStyles = {
-            content: {
-                top: '50%',
-                left: '50%',
-                right: 'auto',
-                bottom: 'auto',
-                marginRight: '-50%',
-                transform: 'translate(-50%, -50%)',
-                background: '#555'
-            }
-        };
-        return (
-            <Modal isOpen={!!advice} style={customStyles}>
-                <h1 className={`modal-text ${advice ? advice.toLowerCase() : ''}`}>{advice}</h1>
-                <button className="button" onClick={this.props.clearAdvice}>
-                    <span>Back</span>
-                </button>
-            </Modal>
         );
     }
 
@@ -150,7 +137,7 @@ export default class BlackjackAdviserView extends Component {
 
     handleCardChange(type, card) {
         const updateCard = this.props.updateCard;
-        return function() {
+        return function () {
             updateCard(type, card);
         };
     }

@@ -18,7 +18,6 @@ const UPDATE_DEALER_CARD = buildActionName(reducerName, 'UPDATE_DEALER_CARD');
 const UPDATE_SHOW_USER_CARDS_1 = buildActionName(reducerName, 'UPDATE_SHOW_USER_CARDS_1');
 const UPDATE_SHOW_USER_CARDS_2 = buildActionName(reducerName, 'UPDATE_SHOW_USER_CARDS_2');
 const UPDATE_SHOW_DEALER_CARDS = buildActionName(reducerName, 'UPDATE_SHOW_DEALER_CARDS');
-const UPDATE_ADVICE_ACTIVE = buildActionName(reducerName, 'UPDATE_ADVICE_ACTIVE');
 const UPDATE_ADVICE = buildActionName(reducerName, 'UPDATE_ADVICE');
 
 function getInitialState() {
@@ -30,7 +29,6 @@ function getInitialState() {
         showUserCards1: false,
         showUserCards2: false,
         showDealerCards: false,
-        adviceActive: false,
         advice: null
     };
 }
@@ -51,7 +49,7 @@ export function updateCard(type, card) {
                 dispatch(toggleShowCards(type));
                 break;
         }
-        dispatch(setAdviceActive());
+        dispatch(analyse());
     };
 }
 
@@ -72,31 +70,10 @@ function toggleShowCards(type) {
     };
 }
 
-function setAdviceActive() {
-    return (dispatch, getState) => {
-        const { userCard1, userCard2, dealerCard } = getState().cards;
-        let adviceActive = true;
-        if (
-            userCard1 === image.background.blue ||
-            userCard2 === image.background.blue ||
-            dealerCard === image.background.red
-        ) {
-            adviceActive = false;
-        }
-        dispatch(updateAdviceActiveAction(adviceActive));
-    };
-}
-
-export function analyse() {
+function analyse() {
     return (dispatch, getState) => {
         const { userCard1, userCard2, dealerCard } = getState().cards;
         dispatch(updateAdviceAction(getAdvice(userCard1, userCard2, dealerCard)));
-    };
-}
-
-export function clearAdvice() {
-    return dispatch => {
-        dispatch(updateAdviceAction(null));
     };
 }
 
@@ -138,13 +115,6 @@ function updateShowUserCard2Action(payload) {
 function updateShowDealerCardAction(payload) {
     return {
         type: UPDATE_SHOW_DEALER_CARDS,
-        payload
-    };
-}
-
-function updateAdviceActiveAction(payload) {
-    return {
-        type: UPDATE_ADVICE_ACTIVE,
         payload
     };
 }
@@ -193,11 +163,6 @@ export default function BlackjackAdviserReducer(state = getInitialState(), actio
                 showUserCards1: false,
                 showUserCards2: false,
                 showDealerCards: action.payload
-            };
-        case UPDATE_ADVICE_ACTIVE:
-            return {
-                ...state,
-                adviceActive: action.payload
             };
         case UPDATE_ADVICE:
             return {

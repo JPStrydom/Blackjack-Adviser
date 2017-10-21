@@ -11,21 +11,15 @@ span {
     font-size: 28px;
 }
 
-.cards-container {
-    width: 350px;
+.page-container {
+    width: 500px;
     margin-left: auto;
     margin-right: auto;
 }
 
-.user-cards-container {
-    padding-left: 25px;
-    padding-right: 25px;
-}
-
-.dealer-card-container {
-    padding-left: 100px;
-    padding-right: 100px;
-    padding-bottom: 25px;
+.cards-container {
+    display: flex;
+    justify-content: space-around;
 }
 
 .heading {
@@ -59,38 +53,27 @@ span {
     transition-duration: 0.25s;
 }
 
-.button-container {
-    padding-left: 100px;
-    padding-right: 100px;
-    padding-bottom: 25px;
+.advice-card-container {
+    display: flex;
+    justify-content: space-around;
 }
 
-.button {
-    min-width: 150px;
-    background-color: #4cacaf;
-    border: none;
-    border-radius: 4px;
-    color: white;
+.advice-card {
+    display: inline-block;
+    background-color: gray;
+    margin-top: 20px;
+    margin-bottom: 20px;
     padding: 10px 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 3px;
+    min-width: 150px;
     text-align: center;
-    text-decoration: none;
+}
+
+.advice-text {
+    margin-bottom: 4px;
     font-family: Optima, Segoe, 'Segoe UI', Candara, Calibri, Arial, sans-serif;
-    cursor: pointer;
-    transition-duration: 0.25s;
-    outline: none !important;
-}
-
-.button:hover {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
-    transform: scale(1.05);
-}
-
-.button:disabled {
-    transition-delay: 0.25s;
-    opacity: 0.6;
-    cursor: not-allowed;
-    box-shadow: none;
-    transform: scale(1);
+    font-weight: bold;
 }
 
 .github-link-container {
@@ -130,27 +113,20 @@ span {
     display: block;
 }
 
-.modal-text {
-    text-align: center;
-    font-weight: bold;
-    padding-bottom: 12px;
-    font-family: Optima, Segoe, 'Segoe UI', Candara, Calibri, Arial, sans-serif;
-}
-
 .hit {
-    color: red;
+    color: darkred;
 }
 
 .stay {
-    color: yellow;
+    color: gold;
 }
 
 .double {
-    color: green;
+    color: darkgreen;
 }
 
 .split {
-    color: blue;
+    color: darkblue;
 }
 
 .blackjack {
