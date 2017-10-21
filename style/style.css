@@ -17,17 +17,17 @@ span {
     margin-right: auto;
 }
 
-.cards-container {
-    display: flex;
-    justify-content: space-around;
-}
-
 .heading {
     color: black;
     margin-top: 20px;
     margin-bottom: 20px;
     text-align: center;
     font-family: Optima, Segoe, 'Segoe UI', Candara, Calibri, Arial, sans-serif;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: space-around;
 }
 
 .image {
@@ -62,7 +62,6 @@ span {
     display: inline-block;
     background-color: gray;
     margin-top: 20px;
-    margin-bottom: 20px;
     padding: 10px 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 3px;
@@ -76,8 +75,30 @@ span {
     font-weight: bold;
 }
 
+.advice-enter {
+    max-height: 0px;
+    -webkit-transition: max-height 0.25s ease;
+    overflow: hidden;
+}
+
+.advice-enter.advice-enter-active {
+    height: auto;
+    max-height: 100px;
+}
+
+.advice-leave {
+    max-height: 100px;
+    -webkit-transition: max-height 0.25s ease;
+}
+
+.advice-leave.advice-leave-active {
+    overflow: hidden;
+    max-height: 0px;
+}
+
 .github-link-container {
     text-align: center;
+    margin-top: 20px;
 }
 
 .github-link {

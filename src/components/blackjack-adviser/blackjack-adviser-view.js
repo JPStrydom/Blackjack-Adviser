@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Dropdown, { DropdownTrigger, DropdownContent } from 'react-simple-dropdown';
-import Modal from 'react-modal';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import image from './utilities/image-link';
 
 export default class BlackjackAdviserView extends Component {
@@ -113,15 +113,18 @@ export default class BlackjackAdviserView extends Component {
 
     renderAdvice() {
         const { advice } = this.props.cards;
-        if (!advice) {
-            return <br />;
-        }
-        return (
-            <div className="advice-card-container">
+        let component;
+        if (advice) {
+            component = <div className="advice-card-container">
                 <div className="advice-card">
                     <h4 className={`advice-text ${advice ? advice.toLowerCase() : ''}`}>{advice}</h4>
                 </div>
             </div>
+        }
+        return (
+            <ReactCSSTransitionGroup transitionName="advice">
+                {component}
+            </ReactCSSTransitionGroup>
         );
     }
 
