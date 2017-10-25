@@ -1,15 +1,17 @@
 # [Blackjack Adviser](https://blackjack-adviser.herokuapp.com/)
 
-##Introduction
+## Introduction
 
 This is a simple React web-application that will help you pick the best statistical blackjack betting strategy. It looks at the player and the dealer's hand and estimates which betting strategy would be most profitable.
-##Links 
+
+## Links 
 
 - The web-application can be visited [here](https://blackjack-adviser.herokuapp.com/)
 - The project's GitHub repository can be found [here](https://github.com/JPStrydom/Blackjack-Adviser)
 - A guide on how to play Blackjack can be found [here](http://www.bicyclecards.com/how-to-play/blackjack/)
+- An awesome free web-application hosting platform called Heroku can be found [here](https://www.heroku.com/)
 
-##Setup
+## Setup
 
 If you'd like to run this project yourself, you can follow the following steps:
 
