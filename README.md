@@ -1,4 +1,7 @@
-# [Blackjack Adviser](https://blackjack-adviser.herokuapp.com/)
+[Blackjack Adviser](https://blackjack-adviser.herokuapp.com/)
+=============================================================
+
+[![Build Status](https://travis-ci.org/JPStrydom/Blackjack-Adviser.svg?branch=master)](https://travis-ci.org/JPStrydom/Blackjack-Adviser)
 
 ## Introduction
 
