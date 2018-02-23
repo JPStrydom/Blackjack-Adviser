@@ -9,7 +9,6 @@
     "postinstall": "webpack -p",
     "start": "node server.js",
     "test": "jest --coverage && cat ./coverage/lcov.info | coveralls",
-    "cover": "istanbul cover node_modules/mocha/bin/_mocha -- -R spec \"src/**/*.spec.js\"",
     "prettier": "prettier --write --tab-width=4 --single-quote=true --print-width=120 \"src/**/*.{js,css}\""
   },
   "pre-commit": [
