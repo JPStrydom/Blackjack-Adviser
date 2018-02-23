@@ -2,6 +2,7 @@
 =============================================================
 
 [![Build Status](https://travis-ci.org/JPStrydom/Blackjack-Adviser.svg?branch=master)](https://travis-ci.org/JPStrydom/Blackjack-Adviser)
+[![Coverage Status](https://coveralls.io/repos/github/JPStrydom/Blackjack-Adviser/badge.svg?branch=master)](https://coveralls.io/github/JPStrydom/Blackjack-Adviser?branch=master)
 
 ## Introduction
 
