@@ -5,6 +5,8 @@
 [![Coverage Status](https://coveralls.io/repos/github/JPStrydom/Blackjack-Adviser/badge.svg?branch=master)](https://coveralls.io/github/JPStrydom/Blackjack-Adviser?branch=master)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
+[![js-standard-style](https://cdn.rawgit.com/standard/standard/master/badge.svg)](http://standardjs.com)
+
 ## Introduction
 
 This is a simple React web-application that will help you pick the best statistical blackjack betting strategy. It looks at the player and the dealer's hand and estimates which betting strategy would be most profitable.
